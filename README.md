@@ -5,20 +5,14 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7
 
-* System dependencies
+* System dependencies - rails running
 
-* Configuration
+* Configuration- yarn and node js
 
-* Database creation
+* Database creation - postgres
 
-* Database initialization
+* Database initialization - not required
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run the test suite - start rails server and visit localhost/3000
