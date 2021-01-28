@@ -22,16 +22,9 @@ class BlogPostsController < ApplicationController
 
   # POST /blog_posts or /blog_posts.json
   def create
-    # puts "#" * 500
-    # puts "in create"
-    # puts blog_post_params
-    # puts "#" * 500
-    #blog_post_params[:user_id => current_user.id]
     @blog_post = BlogPost.new(blog_post_params)
     @blog_post.user_id = current_user.id
     @blog_post.save!
-
-    # BlogPost[user_id] = current_user.id
 
     respond_to do |format|
       if @blog_post.save
@@ -74,9 +67,6 @@ class BlogPostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_post_params
-      # temp_params = params.require(:blog_post).permit(:title, :body) 
-      # temp_params[:user_id] = current_user.id
-      # temp_params
       params.require(:blog_post).permit(:title, :body) 
     end
 end

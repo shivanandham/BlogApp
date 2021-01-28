@@ -2,9 +2,11 @@ class CommentsController < ApplicationController
 	before_action :authenticate_user!
 	def create
 		@blog_post = BlogPost.find(params[:blog_post_id])
-		@comment = @blog_post.comments.create(params[:comment].permit(:comment))
-		@comment.email = current_user.email
-    	@comment.save!
+		@user = User.find(current_user.id)		
+		@comment = @blog_post.comments.new(params[:comment].permit(:comment))
+		@comment_user = @user.comments.new(params[:comment].permit(:comment))
+		@comment.save!
+		@comment_user.save!
 		redirect_to blog_post_path(@blog_post)
 	end
 end
