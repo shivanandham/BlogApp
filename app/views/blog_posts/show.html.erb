@@ -14,3 +14,14 @@
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <% end %>
 <%= link_to 'Back', blog_posts_path %>
+
+
+<br><br><br><br>
+<div>Comments:</div>
+<div>
+	<%= render @blog_post.comments %>
+</div>
+<br><br><br>
+<div>
+	<%= render'comments/form' %>
+</div>
